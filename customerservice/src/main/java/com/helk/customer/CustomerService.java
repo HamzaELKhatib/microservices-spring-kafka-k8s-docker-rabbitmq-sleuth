@@ -1,5 +1,7 @@
 package com.helk.customer;
 
+import com.helk.clients.fraud.FraudCheckResponse;
+import com.helk.clients.fraud.FraudClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -8,7 +10,8 @@ import java.util.Objects;
 
 @Slf4j
 @Service
-public record CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate) {
+public record CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate,
+                              FraudClient fraudClient) {
     public void registerCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
         Customer customer = Customer.builder()
                 .firstName(customerRegistrationRequest.firstName())
@@ -22,11 +25,8 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
         customerRepository.saveAndFlush(customer);
 
         // Checking if fraudster using the fraud service
-        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-                "http://FRAUD/api/v1/fraud-check/{customerId}", // FRAUD is the name of the fraud service from the eureka instance registry
-                FraudCheckResponse.class,
-                customer.getId()
-        );
+        FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(customer.getId());
+
 
         if (!Objects.isNull(fraudCheckResponse) && fraudCheckResponse.isFraudster()) {
             throw new IllegalStateException("Customer is a fraudster");

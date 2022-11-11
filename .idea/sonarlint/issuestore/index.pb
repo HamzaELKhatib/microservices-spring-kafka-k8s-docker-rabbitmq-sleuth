@@ -1,12 +1,6 @@
 
 C
 customerservice.iml,0\5\05bb8c6cc2025eeecef80b06a028dc8507dfed08
-q
-Afraudservice/src/main/java/com/helk/fraud/FraudCheckResponse.java,b\f\bfadf2f4e837d9ddb9cd229aca113be112e1d7e6
-n
->fraudservice/src/main/java/com/helk/fraud/FraudController.java,8\9\8983b276e26f1a45b4d565647230649e7b952c8f
-w
-Gcustomerservice/src/main/java/com/helk/customer/FraudCheckResponse.java,d\a\da0f3c938ca28d181d3196fad072c1badc47da96
 p
 @fraudservice/src/main/java/com/helk/fraud/FraudCheckHistory.java,7\e\7e564160623fe1015e2c40256e216cd30c673d9d
 w
