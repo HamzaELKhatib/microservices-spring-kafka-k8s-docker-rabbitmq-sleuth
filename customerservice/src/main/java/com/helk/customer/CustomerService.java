@@ -23,10 +23,10 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
 
         // Checking if fraudster using the fraud service
         FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-                "http://localhost:8081/api/v1/fraud-check/{customerId}",
+                "http://FRAUD/api/v1/fraud-check/{customerId}", // FRAUD is the name of the fraud service from the eureka instance registry
                 FraudCheckResponse.class,
                 customer.getId()
-                );
+        );
 
         if (!Objects.isNull(fraudCheckResponse) && fraudCheckResponse.isFraudster()) {
             throw new IllegalStateException("Customer is a fraudster");

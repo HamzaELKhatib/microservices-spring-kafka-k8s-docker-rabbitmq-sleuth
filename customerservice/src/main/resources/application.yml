@@ -9,6 +9,10 @@ spring:
     username: helk
   jpa:
     hibernate:
+      # create-drop: drop and create the schema on startup, useful for testing.
+      # update: update the schema if needed.
+      # validate: validate the schema, makes no changes to the database.
+      # none: use the database as is.
       ddl-auto: create-drop
     properties:
       hibernate:
