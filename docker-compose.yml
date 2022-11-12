@@ -20,25 +20,42 @@ services:
     container_name: postgres-fraud
     image: postgres
     environment:
-        POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: password
         POSTGRES_USER: helk
-        PGDATA: /data/postgres
+      PGDATA: /data/postgres
     volumes:
       - postgres-fraud:/data/postgres
     ports:
-        - "5433:5433"
+      - "5433:5433"
     command: -p 5433
     networks:
-        - postgres
+      - postgres
+    restart: unless-stopped
+
+  #  notification specific db
+  postgres-notification:
+    container_name: postgres-notification
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: helk
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-notification:/data/postgres
+    ports:
+      - "5434:5434"
+    command: -p 5434
+    networks:
+      - postgres
     restart: unless-stopped
 
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
     environment:
-        PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
-        PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-        PGADMIN_CONFIG_SERVER_MODE: 'False'
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
       - pgadmin:/var/lib/pgadmin
     ports:
@@ -53,6 +70,7 @@ networks:
 
 
 volumes:
-    postgres-customer:
+  postgres-customer:
     postgres-fraud:
+  postgres-notification:
     pgadmin:
