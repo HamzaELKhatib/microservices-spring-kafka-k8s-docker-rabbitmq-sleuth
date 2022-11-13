@@ -1,27 +1,27 @@
 services:
-#  customer specific db
+  #  customer specific db
   postgres-customer:
     container_name: postgres-customer
     image: postgres
     environment:
-        POSTGRES_PASSWORD: password
-        POSTGRES_USER: helk
-        PGDATA: /data/postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: helk
+      PGDATA: /data/postgres
     volumes:
       - postgres-customer:/data/postgres
     ports:
-        - "5432:5432"
+      - "5432:5432"
     networks:
-        - postgres
+      - postgres
     restart: unless-stopped
 
-#  fraud specific db
+  #  fraud specific db
   postgres-fraud:
     container_name: postgres-fraud
     image: postgres
     environment:
       POSTGRES_PASSWORD: password
-        POSTGRES_USER: helk
+      POSTGRES_USER: helk
       PGDATA: /data/postgres
     volumes:
       - postgres-fraud:/data/postgres
@@ -65,12 +65,12 @@ services:
     restart: unless-stopped
 
 networks:
-    postgres:
-        driver: bridge
+  postgres:
+    driver: bridge
 
 
 volumes:
   postgres-customer:
-    postgres-fraud:
+  postgres-fraud:
   postgres-notification:
-    pgadmin:
+  pgadmin:
