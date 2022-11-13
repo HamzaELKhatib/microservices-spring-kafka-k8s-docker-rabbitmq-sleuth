@@ -2,6 +2,8 @@ package com.helk.customer;
 
 import com.helk.clients.fraud.FraudCheckResponse;
 import com.helk.clients.fraud.FraudClient;
+import com.helk.clients.notification.NotificationClient;
+import com.helk.clients.notification.NotificationRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -11,7 +13,7 @@ import java.util.Objects;
 @Slf4j
 @Service
 public record CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate,
-                              FraudClient fraudClient) {
+                              FraudClient fraudClient, NotificationClient notificationClient) {
     public void registerCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
         Customer customer = Customer.builder()
                 .firstName(customerRegistrationRequest.firstName())
@@ -32,6 +34,10 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
             throw new IllegalStateException("Customer is a fraudster");
         }
 
-        // Todo: send email
+        // Sending notification // Todo: make it async
+        notificationClient.sendNotification(
+                new NotificationRequest(customer.getId(), customer.getEmail(), "Welcome to Helk, " + customer.getFirstName())
+        );
+
     }
 }

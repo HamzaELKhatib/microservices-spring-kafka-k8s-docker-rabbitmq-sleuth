@@ -13,6 +13,7 @@
     <module>fraudservice</module>
     <module>eureka-server</module>
       <module>clients</module>
+      <module>notificationservice</module>
   </modules>
 
   <name>helkmicroservices</name>
