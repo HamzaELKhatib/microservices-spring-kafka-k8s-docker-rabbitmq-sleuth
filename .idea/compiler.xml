@@ -11,6 +11,7 @@
         <module name="clients" />
         <module name="customerservice" />
         <module name="eureka-server" />
+        <module name="notificationservice" />
       </profile>
     </annotationProcessing>
   </component>
