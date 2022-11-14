@@ -1,0 +1,86 @@
+services:
+  #  customer specific db
+  postgres-customer:
+    container_name: postgres-customer
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: helk
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-customer:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  #  fraud specific db
+  postgres-fraud:
+    container_name: postgres-fraud
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: helk
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-fraud:/data/postgres
+    ports:
+      - "5433:5433"
+    command: -p 5433
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  #  notification specific db
+  postgres-notification:
+    container_name: postgres-notification
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: helk
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-notification:/data/postgres
+    ports:
+      - "5434:5434"
+    command: -p 5434
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  # Zipkin
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      # Port used for the Zipkin UI and HTTP Api
+      - "9411:9411"
+      # Uncomment if you set SCRIBE_ENABLED=true
+      # - 9410:9410
+
+networks:
+  postgres:
+    driver: bridge
+
+
+volumes:
+  postgres-customer:
+  postgres-fraud:
+  postgres-notification:
+  pgadmin:
