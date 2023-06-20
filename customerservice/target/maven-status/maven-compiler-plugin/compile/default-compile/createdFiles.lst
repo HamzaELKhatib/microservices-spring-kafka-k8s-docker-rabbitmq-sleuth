@@ -1,0 +1,8 @@
+com\helk\customer\CustomerApplication.class
+com\helk\customer\CustomerController.class
+com\helk\customer\CustomerConfig.class
+com\helk\customer\Customer$CustomerBuilder.class
+com\helk\customer\CustomerRepository.class
+com\helk\customer\CustomerRegistrationRequest.class
+com\helk\customer\Customer.class
+com\helk\customer\CustomerService.class

@@ -1,0 +1,6 @@
+com\helk\fraud\FraudApplication.class
+com\helk\fraud\FraudCheckHistory.class
+com\helk\fraud\FraudController.class
+com\helk\fraud\FraudCheckHistory$FraudCheckHistoryBuilder.class
+com\helk\fraud\FraudCheckHistoryRepository.class
+com\helk\fraud\FraudCheckHistoryService.class

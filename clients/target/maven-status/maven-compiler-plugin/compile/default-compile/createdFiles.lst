@@ -1,0 +1,4 @@
+com\helk\clients\fraud\FraudCheckResponse.class
+com\helk\clients\notification\NotificationClient.class
+com\helk\clients\fraud\FraudClient.class
+com\helk\clients\notification\NotificationRequest.class

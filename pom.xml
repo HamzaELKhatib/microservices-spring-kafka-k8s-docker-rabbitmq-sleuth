@@ -14,6 +14,7 @@
     <module>eureka-server</module>
       <module>clients</module>
       <module>notificationservice</module>
+      <module>apigateway</module>
   </modules>
 
   <name>helkmicroservices</name>
