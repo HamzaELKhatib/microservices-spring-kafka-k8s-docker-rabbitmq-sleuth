@@ -1,8 +1,4 @@
 
-€
-Pnotificationservice/src/main/java/com/helk/notification/NotificationService.java,3\0\309b57f12d953955e2302b6193b41e274f9bd788
-ƒ
-Snotificationservice/src/main/java/com/helk/notification/NotificationController.java,a\a\aa2f40ed327d375a4896de1a9f932f0d2da56cdd
 |
 Lclients/src/main/java/com/helk/clients/notification/NotificationRequest.java,7\0\709f3dbb444233157adcbb50b6afa1c893f2ca73
 w

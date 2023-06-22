@@ -5,14 +5,8 @@ C
 clients/pom.xml,e\8\e897e41994586ab73af075bc072526099d5eec43
 o
 ?fraudservice/src/main/java/com/helk/fraud/FraudApplication.java,b\2\b2b2616903e95dfd2562c3cdb11a88765f8fcc51
-„
-Tnotificationservice/src/main/java/com/helk/notification/NotificationApplication.java,1\3\13926d03eb1e34d91d32e65516128ede9539140f
-€
-Pnotificationservice/src/main/java/com/helk/notification/NotificationService.java,3\0\309b57f12d953955e2302b6193b41e274f9bd788
 |
 Lclients/src/main/java/com/helk/clients/notification/NotificationRequest.java,7\0\709f3dbb444233157adcbb50b6afa1c893f2ca73
-ƒ
-Snotificationservice/src/main/java/com/helk/notification/NotificationController.java,a\a\aa2f40ed327d375a4896de1a9f932f0d2da56cdd
 w
 Gcustomerservice/src/main/java/com/helk/customer/CustomerController.java,9\0\905a11c78aa92d1dd377d7a4af35692b53ad80ac
 ~
