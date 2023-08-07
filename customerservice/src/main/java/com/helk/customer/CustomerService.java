@@ -30,7 +30,7 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
         FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(customer.getId());
 
 
-        if (!Objects.isNull(fraudCheckResponse) && fraudCheckResponse.isFraudster()) {
+        if (!Objects.isNull(fraudCheckResponse) && Boolean.TRUE.equals(fraudCheckResponse.isFraudster())) {
             throw new IllegalStateException("Customer is a fraudster");
         }
 

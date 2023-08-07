@@ -1,0 +1,6 @@
+com\helk\notification\Notification.class
+com\helk\notification\Notification$NotificationBuilder.class
+com\helk\notification\NotificationRepository.class
+com\helk\notification\NotificationApplication.class
+com\helk\notification\NotificationController.class
+com\helk\notification\NotificationService.class
