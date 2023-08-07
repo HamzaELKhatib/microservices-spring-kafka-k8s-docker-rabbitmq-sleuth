@@ -10,6 +10,7 @@
         <module name="apigateway" />
         <module name="fraudservice" />
         <module name="clients" />
+        <module name="amqp" />
         <module name="customerservice" />
         <module name="eureka-server" />
         <module name="notificationservice" />
