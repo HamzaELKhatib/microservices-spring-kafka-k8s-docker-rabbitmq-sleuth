@@ -1,5 +1,6 @@
 package com.helk.customer;
 
+import com.helk.amqp.RabbitMQMessageProducer;
 import com.helk.clients.fraud.FraudCheckResponse;
 import com.helk.clients.fraud.FraudClient;
 import com.helk.clients.notification.NotificationClient;
@@ -13,7 +14,8 @@ import java.util.Objects;
 @Slf4j
 @Service
 public record CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate,
-                              FraudClient fraudClient, NotificationClient notificationClient) {
+                              FraudClient fraudClient,
+                              RabbitMQMessageProducer producer) {
     public void registerCustomer(CustomerRegistrationRequest customerRegistrationRequest) {
         Customer customer = Customer.builder()
                 .firstName(customerRegistrationRequest.firstName())
@@ -35,9 +37,10 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
         }
 
         // Sending notification // Todo: make it async
-        notificationClient.sendNotification(
-                new NotificationRequest(customer.getId(), customer.getEmail(), "Welcome to Helk, " + customer.getFirstName())
-        );
+        NotificationRequest notificationRequest = new NotificationRequest(customer.getId(), customer.getEmail(), "Welcome to Helk, " + customer.getFirstName());
+
+        producer.publish(notificationRequest, "internal.exchange", "internal.notification.routing-key");
+
 
     }
 }
