@@ -15,6 +15,7 @@
       <module>clients</module>
       <module>notificationservice</module>
       <module>apigateway</module>
+      <module>amqp</module>
   </modules>
 
   <name>helkmicroservices</name>
