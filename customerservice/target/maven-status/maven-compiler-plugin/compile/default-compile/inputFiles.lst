@@ -1,7 +1,7 @@
-C:\Users\hamza\OneDrive\Desktop\Microservices\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerRepository.java
-C:\Users\hamza\OneDrive\Desktop\Microservices\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerConfig.java
-C:\Users\hamza\OneDrive\Desktop\Microservices\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerService.java
-C:\Users\hamza\OneDrive\Desktop\Microservices\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\Customer.java
-C:\Users\hamza\OneDrive\Desktop\Microservices\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerApplication.java
-C:\Users\hamza\OneDrive\Desktop\Microservices\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerRegistrationRequest.java
-C:\Users\hamza\OneDrive\Desktop\Microservices\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerController.java
+C:\Users\hamza\OneDrive\Desktop\IdeaProjects\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerRegistrationRequest.java
+C:\Users\hamza\OneDrive\Desktop\IdeaProjects\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\Customer.java
+C:\Users\hamza\OneDrive\Desktop\IdeaProjects\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerApplication.java
+C:\Users\hamza\OneDrive\Desktop\IdeaProjects\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerService.java
+C:\Users\hamza\OneDrive\Desktop\IdeaProjects\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerController.java
+C:\Users\hamza\OneDrive\Desktop\IdeaProjects\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerRepository.java
+C:\Users\hamza\OneDrive\Desktop\IdeaProjects\microservices-spring-kafka-k8s-docker-rabbitmq-sleuth\customerservice\src\main\java\com\helk\customer\CustomerConfig.java
