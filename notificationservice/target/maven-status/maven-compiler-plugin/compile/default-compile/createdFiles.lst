@@ -1,8 +1,0 @@
-com\helk\notification\rabbitmq\NotificationConsumer.class
-com\helk\notification\Notification.class
-com\helk\notification\Notification$NotificationBuilder.class
-com\helk\notification\NotificationRepository.class
-com\helk\notification\NotificationApplication.class
-com\helk\notification\NotificationController.class
-com\helk\notification\NotificationConfig.class
-com\helk\notification\NotificationService.class
