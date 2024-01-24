@@ -85,6 +85,8 @@ services:
       - "5672:5672"
       # Management port (For the management console)
       - 15672:15672
+    networks:
+      - spring
   eureka-server:
     image: helk0/eureka-server:latest
     container_name: eureka-server
@@ -108,6 +110,51 @@ services:
     depends_on:
       - zipkin
       - eureka-server
+  customerservice:
+    image: helk0/customerservice:latest
+    container_name: customerservice
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING.PROFILES.ACTIVE=docker
+    networks:
+      - spring
+      - postgres
+    depends_on:
+      - zipkin
+      - eureka-server
+      - postgres-customer
+      - rabbitmq
+  fraudservice:
+    image: helk0/fraudservice:latest
+    container_name: fraudservice
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING.PROFILES.ACTIVE=docker
+    networks:
+      - spring
+      - postgres
+    depends_on:
+      - zipkin
+      - eureka-server
+      - postgres-fraud
+      - rabbitmq
+  notificationservice:
+    image: helk0/notificationservice:latest
+    container_name: notificationservice
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING.PROFILES.ACTIVE=docker
+    networks:
+      - spring
+      - postgres
+    depends_on:
+      - zipkin
+      - eureka-server
+      - postgres-notification
+      - rabbitmq
 
 networks:
   postgres:
